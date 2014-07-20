@@ -1,0 +1,8 @@
+{
+    "name": "loading",
+    "description": "loading component",
+    "local": [],
+    "scripts": ["index.js"],
+    "templates": [],
+    "main": "index.js"
+}
