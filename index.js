@@ -21,7 +21,7 @@ var clean = function (sandbox) {
     $('.loading', sandbox).remove();
 };
 
-module.exports = function (loader, renderer, sandbox, fn) {
+module.exports = function (loader, renderer, sandbox, done) {
     var el = $('<div class="loading"><h2>loading</h2></div>');
     sandbox.html(el);
     loader(function (err, data) {
@@ -33,7 +33,7 @@ module.exports = function (loader, renderer, sandbox, fn) {
             });
         });
     });
-    fn(false, function () {
+    done(null, function () {
         var o = find(sandbox);
         o.loader.clean ? o.loader.clean() : clean(sandbox);
         //delete loaders[o.index];
